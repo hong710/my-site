@@ -1,0 +1,51 @@
+//Initial logo
+#logo{	
+	height: 80px;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+#name{
+	margin-left: 20px; 
+	font-size: 160%;
+	color: $theme_color;
+	font-style: italic;
+	font-family: $heading_font;
+
+}
+#logo-small{	
+	@extend #logo;
+	height: 50px;
+}
+#name-small{
+	@extend #name;
+	font-size: 100%;
+}
+.ft-logo{
+	height: 50px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+//Social media logo
+$linkedin: #007bb5;
+$facebook:#3b5998;
+$pinterest:#cb2027;
+$github:#171515;
+$g-plus:#dd4b39;
+$twitter: #55acee;
+.fa-linkedin,
+.fa-facebook,
+.fa-pinterest,
+.fa-github,
+.fa-twitter,
+.google-plus{
+	font-size: 160%;
+
+}
+.fa-linkedin{color:$linkedin;}
+.fa-facebook{color:$facebook; }
+.fa-pinterest{color:$pinterest; }
+.fa-github{color:$github; }
+.fa-twitter{color:$twitter; }
+.fa-google-plus{color:$g-plus; }

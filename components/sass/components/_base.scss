@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    //test-mode
+    /*background: #2c3e50 !important;
+    color: #2ecc71 !important;
+    outline: solid #c0392b 1px !important;*/ 
+}
+body{
+    font-family: $main_font;
+    color: $font_color;
+    background-color: $main_bg;
+    font-size: 18px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: $heading_font;
+}
+
+button:focus,
+input[type=text],
+input[type=email],
+input[type=tel],
+input[type=file],
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=tel]:focus,
+input[type=file]:focus,
+.form-control:focus
+{
+    outline: none;
+    border: 1px solid $border_color;
+    box-shadow: none;
+}
+
+input[placeholder],
+textarea[placeholder]{
+    font-weight: 300;
+    padding: 10px;
+    font-size: inherit !important;
+}
+
+ul{
+    list-style: none;
+}
+a:visited,
+a:link,
+a:hover,
+a:active{
+    text-decoration: none;
+    color:inherit;
+    &:focus{outline: none;}
+}
+
+i{
+    color: $theme_color;
+    margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+

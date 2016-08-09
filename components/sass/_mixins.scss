@@ -1,0 +1,68 @@
+/*--------------------------------------------*/
+/*BUTTON									  */
+/*--------------------------------------------*/
+
+//BUTTON STYLE
+//@pagram: size, btn_color,font_color, , border_radius
+$main_btn_color:$theme_color;
+$text_color:$contrast_color;
+@mixin button_color($btn_color:$main_btn_color,$color:$text_color,$radius:0){	
+	@if $btn_color=='transparent'{
+		&:link,&:visited{
+			border: 1px solid $main_btn_color;
+			color: $main_btn_color !important;
+		}
+	}@else {
+		color: $color !important;
+	}		
+	background-color: $btn_color;
+	border: 1px solid $btn_color;	
+	border-radius: $radius;
+	display: inline-block;
+	font-weight: 300;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;	
+	text-decoration: none;
+	letter-spacing: inherit;
+	transition: background-color 0.5s, border .5s, color 0.5s;
+	box-shadow: 0px 2px 5px $box_shadow_color;
+	&:hover,
+	&:active{
+		@if $btn_color=='transparent'{
+			background-color: $main_btn_color;
+			border: 1px solid $main_btn_color;
+			color:white !important;
+		}@else {
+			background-color: darken($btn_color, 10%);
+			border: 1px solid darken($btn_color, 10%);
+
+		}
+	}
+}
+//BUTTON SIZE
+@mixin button_size($size:"md"){
+	//if statement
+	@if $size =='xs'{
+		padding: 4px 8px;
+		font-size:85%px;
+	}
+	@if $size=='sm'{
+		padding: 6px 12px;
+		font-size:95%;
+	}
+	@if $size=='md'{
+		padding: 10px 20px;
+		font-size:100%;
+	}
+	@if $size=='lg'{
+		padding: 15px 30px;
+		font-size:110%;
+	}
+	@if $size=='xlg'{
+		padding: 15px 40px;
+		font-size:130%;		
+	}
+}
+
+

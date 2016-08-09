@@ -1,0 +1,43 @@
+//BUTTON STYLES
+.bt-primary{
+	@include button_color($theme_color,$contrast_color,5px);
+}
+.bt-clear{
+	@include button_color('transparent',$contrast_color,5px);
+}
+
+.bt-up{
+	padding:12px 15px;
+	border-color: $theme_color;
+	background: $theme_color!important;
+	i{color: $contrast_color;margin-right: 0;font-size: 90%;}
+	position: fixed;
+	border-radius: 50%;
+	bottom:10px; 
+	right: 10px;
+	box-shadow: 1px 2px 5px $box_shadow_color;
+	z-index: 9999;	
+}
+
+//BUTTON SIZE
+.bt-xlg{
+	@include button_size('xlg');
+}
+.bt-lg{
+	@include button_size('lg');
+}
+.bt-md{
+	@include button_size('md');
+}
+.bt-sm{
+	@include button_size('sm');
+}
+.bt-xs{
+	@include button_size('xs');
+}
+
+
+
+
+
+

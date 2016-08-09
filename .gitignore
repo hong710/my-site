@@ -1,0 +1,5 @@
+.DS_Store
+node_modudes
+.tmp
+.sass-cache
+node_modules

@@ -1,0 +1,24 @@
+footer{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background: $panel_bg;
+	color: $contrast_color;	
+	font-size: 85%;
+	p{padding:10px 15px;margin-bottom: 15px;}
+		a{
+			border-right: 1px solid $border_color;
+			padding:0 15px;
+			&:last-child{border:none;}
+			&:hover{
+				background: none;
+				color: $theme_color;
+			}
+		}
+	.line{		
+		border-top: 5px solid $theme_color;
+		width: 15%;
+	}
+	.ft-logo{
+		margin-top:15px;
+	}	
+}

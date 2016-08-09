@@ -1,0 +1,60 @@
+@import 'https://fonts.googleapis.com/css?family=Playfair+Display:700,900i|Roboto:300,400';
+
+/************************************************
+*				BASIC SETUP						*		
+*************************************************/
+$font_color:#454545;
+$main_bg:#F0F0F0;
+$main_font: 'Roboto', sans-serif;
+$heading_font:'Playfair Display',sans-serif;
+$theme_color:#16a085;//#E67E22 #3498DB #2980B9 #16a085 #2276D2
+$contrast_color:#fff;
+$border_color:#DCDCDC;//light grey
+$box_shadow_color:#555;
+$success_bt:#16a085;
+$panel_bg:#3B4952;
+$success_color:#DFF0D8;
+$error_color:#F2DEDE;
+/************************************************
+*			 COMPONENTS  						*		
+*************************************************/
+/************************
+*		Base  			* 			
+*************************/
+//$main_font
+//$font_color
+//$main_bg
+//heading_font
+
+/**************************
+*		Nav				  *		
+***************************/
+//$theme_color
+$element_color:$contrast_color;
+$element_hover:rgba(white, .7);
+
+/**************************
+*		Misc			  *		
+***************************/
+//$theme_color
+
+/**************************
+*		Button			  *		
+***************************/
+//$theme_color -> for primary background bt
+//$contrast_color->for text bt
+//$success_color:#16a085;
+
+/**************************
+*		Button			  *		
+***************************/
+//$theme_color
+//$heading_font
+/************************************************
+*			  MODULES     						*		
+*************************************************/
+
+/**************************
+*		Header			  *		
+***************************/
+//$contrast_color;//image caption

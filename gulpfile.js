@@ -1,8 +1,9 @@
-var gulp = require('gulp'),
-	gutil = require('gulp-util'),
-	concat = require('gulp-concat');
+var gulp 	= require('gulp'),
+	gutil 	= require('gulp-util'),
+	concat 	= require('gulp-concat');
 	compass = require('gulp-compass'),
-	prefix = require('gulp-autoprefixer');
+	insert	= require('gulp-insert'); 	
+	prefix 	= require('gulp-autoprefixer');
 
 var jsVendors= [
 	'components/vendors/js/jquery.waypoints.min.js',
@@ -15,27 +16,19 @@ gulp.task('js_vendors', function(){
 		.pipe(gulp.dest('builds/development/assets/js'))
 });	
 
-var jsSources= [
-	'components/scripts/nav.js',
-	'components/scripts/mobile_nav.js',
-	'components/scripts/animation.js',
-	'components/scripts/misc.js'				
-	];
 //concat custom js
+var jsSources = ['components/scripts/*.js']
 gulp.task('js', function(){
 	gulp.src(jsSources)
 		.pipe(concat('custom.js'))
+		.pipe(insert.prepend('$(document).ready(function(){'))
+		.pipe(insert.append('});'))	
 		.pipe(gulp.dest('builds/development/assets/js'))
 });
 
 //concat css vendor
-var cssVendor = [
-	'components/vendors/css/bootstrap.min.css',
-	'components/vendors/css/animate.css',
-	'components/vendors/css/font-awesome.min.css'
-	];
 gulp.task('css_vendors', function(){
-	gulp.src(cssVendor)
+	gulp.src('components/vendors/css/.css')
 		.pipe(concat('vendors.css'))
 		.pipe(gulp.dest('builds/development/assets/css'))
 });
@@ -61,6 +54,16 @@ gulp.task('prefix', function () {
         }))
         .pipe(gulp.dest('builds/development/assets'));
 });
+
+//exxecute all vendors css and js once time run
+gulp.task('vendors',['js_vendors','css_vendors']);
+
+//update sass and custom.js
+gulp.task('default', function(){
+	gulp.watch(jsSources,['js'],'components/sass/main.scss',['compass']);
+});
+
+
 
 
 

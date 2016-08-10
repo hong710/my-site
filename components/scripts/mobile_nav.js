@@ -27,4 +27,4 @@ $('.js--nav-mobile').click(function(){
         $('nav >div >a >img').show('1000');
         $('nav >div >a >span').show('1000');
     }
-})
+});

@@ -1,74 +1,4 @@
-$(document).ready(function(){
-/***********************************
- *  FOR STICKY NAVIGATION          *               
- ***********************************/ 
- //sticky nav is minimize nav when user scroll down
-
-$('nav').removeClass('sticky-nav');
-$('.js--about').waypoint(function(direction){
-    if(direction=="down"){
-        $('nav').addClass('sticky-nav');
-        //change logo size    
-        $('nav >div >a >img').attr('id', 'logo-small');
-        $('.logo').remove();
-        $('.name').remove();
-        $('nav >div >a >span').attr('id', 'name-small');
-    } else{
-        $('nav').removeClass('sticky-nav');
-        //change logo size back to orginal   
-        $('nav >div >a >img').attr('id', 'logo');
-        $('.logo-small').remove();
-        $('.name-small').remove();
-        $('nav >div >a >span').attr('id', 'name');
-    }
-},{
-   offset:'100px;' 
-});
-
-/***********************************
- *  FOR SCROLL UP BUTTON           *               
- ***********************************/    
-$('.js--about').waypoint(function(direction){
-    if(direction=="down"){
-        $('.bt-up').removeClass('hide');
-    } else{
-        $('.bt-up').addClass('hide');
-    }
-},{
-   offset:'-200px;' 
-});
-
-/*********************************
- *       MobileNav                *               
- **********************************/
- /*logo*/
- if ($(window).width() <=1024) {
-    $('nav >div >a >img').attr('id', 'logo-small');
-    $('.logo').remove();
-
-    $('.name').remove();
-    $('nav >div >a >span').attr('id', 'name-small');
- }
-$('.js--nav-mobile').click(function(){
-    var nav = $('.js--main-nav');
-    nav.slideToggle(200);//.2sec
-
-    //change the icon to x
-    var navIcon = $('.js--nav-icon');
-    if(navIcon.hasClass('fa-bars')){
-        $('nav >div >a >img').hide('1000');
-        $('nav >div >a >span').hide('1000');
-        navIcon.removeClass('fa-bars');
-        navIcon.addClass('fa-times');
-        
-    } else{
-        navIcon.removeClass('fa-times');
-        navIcon.addClass('fa-bars');
-        $('nav >div >a >img').show('1000');
-        $('nav >div >a >span').show('1000');
-    }
-})
-/*********************************
+$(document).ready(function(){/*********************************
  *       Animation               *               
  *********************************/
 if ($(window).width() >= 1024) {
@@ -130,4 +60,73 @@ $(function() {
     });
 });
 
-}); //for document.ready function
+/*********************************
+ *       MobileNav                *               
+ **********************************/
+ /*logo*/
+ if ($(window).width() <=1024) {
+    $('nav >div >a >img').attr('id', 'logo-small');
+    $('.logo').remove();
+
+    $('.name').remove();
+    $('nav >div >a >span').attr('id', 'name-small');
+ }
+$('.js--nav-mobile').click(function(){
+    var nav = $('.js--main-nav');
+    nav.slideToggle(200);//.2sec
+
+    //change the icon to x
+    var navIcon = $('.js--nav-icon');
+    if(navIcon.hasClass('fa-bars')){
+        $('nav >div >a >img').hide('1000');
+        $('nav >div >a >span').hide('1000');
+        navIcon.removeClass('fa-bars');
+        navIcon.addClass('fa-times');
+        
+    } else{
+        navIcon.removeClass('fa-times');
+        navIcon.addClass('fa-bars');
+        $('nav >div >a >img').show('1000');
+        $('nav >div >a >span').show('1000');
+    }
+});
+
+/***********************************
+ *  FOR STICKY NAVIGATION          *               
+ ***********************************/ 
+ //sticky nav is minimize nav when user scroll down
+
+$('nav').removeClass('sticky-nav');
+$('.js--about').waypoint(function(direction){
+    if(direction=="down"){
+        $('nav').addClass('sticky-nav');
+        //change logo size    
+        $('nav >div >a >img').attr('id', 'logo-small');
+        $('.logo').remove();
+        $('.name').remove();
+        $('nav >div >a >span').attr('id', 'name-small');
+    } else{
+        $('nav').removeClass('sticky-nav');
+        //change logo size back to orginal   
+        $('nav >div >a >img').attr('id', 'logo');
+        $('.logo-small').remove();
+        $('.name-small').remove();
+        $('nav >div >a >span').attr('id', 'name');
+    }
+},{
+   offset:'100px;' 
+});
+
+/***********************************
+ *  FOR SCROLL UP BUTTON           *               
+ ***********************************/    
+$('.js--about').waypoint(function(direction){
+    if(direction=="down"){
+        $('.bt-up').removeClass('hide');
+    } else{
+        $('.bt-up').addClass('hide');
+    }
+},{
+   offset:'-200px;' 
+});
+});

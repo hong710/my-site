@@ -3,7 +3,7 @@
 <div class="container">
 	<div class="page-heading"><h1 >About</h1></div>
 	<div>		
-		<img class="avatar" src="img/avatar_blur.png">
+		<img class="avatar" src="assets/img/avatar_blur.png">
 	</div>
 	<div class="row">
 		<div class="col-md-7">
@@ -28,7 +28,7 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-12">
-			<img src="img/about.png">
+			<img src="assets/img/about.png">
 			<h2 class="date"><?php
 				echo date('M');
 				echo "<br>"; 

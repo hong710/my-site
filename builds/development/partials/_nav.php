@@ -1,6 +1,6 @@
 <nav class="sticky-nav">
 	<div class="container clearfix">		
-		<a href="index.php"><img id="logo" src="img/new_logo.png"><span id="name">Tony Hong</span></a>	
+		<a href="index.php"><img id="logo" src="assets/img/new_logo.png"><span id="name">Tony Hong</span></a>	
 		<ul class="main-nav pull-right js--main-nav">			
 			<li><a href="#home">Home</a></li>
 			<li><a href="#about">About</a></li>

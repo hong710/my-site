@@ -4,6 +4,7 @@
 
 <title>Welcome To Tony's Webpage</title>
 
-<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="assets/css/vendors.css">
+<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>

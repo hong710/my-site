@@ -15,11 +15,13 @@ $('.js--about').waypoint(function(direction){
         $('nav >div >a >span').attr('id', 'name-small');
     } else{
         $('nav').removeClass('sticky-nav');
-        //change logo size back to orginal   
-        $('nav >div >a >img').attr('id', 'logo');
-        $('.logo-small').remove();
-        $('.name-small').remove();
-        $('nav >div >a >span').attr('id', 'name');
+        //change logo size back to orginal
+        if($(window).width() >1024){   
+            $('nav >div >a >img').attr('id', 'logo');
+            $('.logo-small').remove();
+            $('.name-small').remove();
+            $('nav >div >a >span').attr('id', 'name');
+        }
     }
 },{
    offset:'100px;' 

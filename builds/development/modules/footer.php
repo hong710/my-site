@@ -11,7 +11,7 @@
 			</div>			
 		</div>
 		<div class="container ">
-			<div class="col-md-12 center"><div class="line center-div"></div><a href=""><img class="ft-logo" src="assets/img/new_logo.png"></a></div>
+			<div class="col-md-12 center"><div class="line center-div"></div><a href=""><img class="ft-logo" src="assets/img/logo.png" alt="Tony Hong Logo"></a></div>
 		</div>		
 	</div>
 </footer>

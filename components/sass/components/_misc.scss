@@ -8,11 +8,12 @@
 	text-transform: uppercase;
 	color: $theme_color;
 
-	h1{
+	h2{
 		border-bottom: 5px solid $theme_color;
 		padding:0 40px;
 		padding-bottom: 10px;
 		display: inline-block;
+		font-size: 180%;
 			}
 }
 
@@ -35,18 +36,17 @@
 	margin: 0 auto;
 }
 
-.hide{display: none;}
-
 /************************
  *  HEADER SEPARATOR    *
  ************************/
 .separator{
 	margin-top:80px; 
 	margin-bottom: 50px;
-	h1{
+	h2{
 		margin:0 0 10px 0;
 		text-transform: uppercase;
-		color: $theme_color; 
+		color: $theme_color;
+		font-size: 180%; 
 	}
 	
 	div{
@@ -100,5 +100,8 @@ textarea.parsley-error {
 *************************************************/
 //mainskill in about
 .js--about-1{animation-delay: .5s;}
+
+
+
 
 

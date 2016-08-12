@@ -1,7 +1,7 @@
 <section id="contact" class="section scrollspy">
 		<div class="container">
 			<div class= "separator">
-	            <h1>Contact</h1>
+	            <h2>Contact</h2>
 	            <div></div>        
 	        </div>
         

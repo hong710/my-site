@@ -1,9 +1,9 @@
 
 <section id="about" class="js--about section scrollspy">
 <div class="container">
-	<div class="page-heading"><h1 >About</h1></div>
+	<div class="page-heading"><h2 >About</h2></div>
 	<div>		
-		<img class="avatar" src="assets/img/avatar_blur.png">
+		<img class="avatar" src="assets/img/avatar.gif" alt="Tony Hong avatar">
 	</div>
 	<div class="row">
 		<div class="col-md-7">
@@ -28,12 +28,11 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-12">
-			<img src="assets/img/about.png">
-			<h2 class="date"><?php
-				echo date('M');
-				echo "<br>"; 
-				echo date('d');
-				?>
+			<img src="assets/img/about.png" alt="Macbookpro calendar ">
+			<h2 class="date">
+				<span class="month"><?php echo date( 'F');?></span>
+				<span class="day"><?php echo date('d');?></span>
+				
 			</h2>			
 		</div>		
 	</div>

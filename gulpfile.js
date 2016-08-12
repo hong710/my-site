@@ -12,13 +12,9 @@ var gulp 	= require('gulp'),
 
 var outputDir='builds/development/';
 
-var jsVendors= [
-	'components/vendors/js/jquery.waypoints.min.js',
-	'components/vendors/js/parsley.js'				
-	];
 //concat js vendor 
 gulp.task('js_vendors', function(){
-	gulp.src(jsVendors)
+	gulp.src('components/vendors/js/*.js')
 		.pipe(concat('vendors.js'))
 		.pipe(gulp.dest(outputDir+'assets/js'))
 });	
@@ -29,7 +25,7 @@ gulp.task('js', function(){
 	gulp.src(jsSources)
 		.pipe(concat('custom.js'))
 		.pipe(insert.prepend('$(document).ready(function(){\n'))
-		.pipe(insert.append('});'))
+		.pipe(insert.append('\n});'))
 		.pipe(gulp.dest(outputDir+'assets/js'))
 });
 
@@ -37,11 +33,12 @@ gulp.task('js', function(){
 gulp.task('css_vendors', function(){
 	gulp.src('components/vendors/css/*.css')
 		.pipe(concat('vendors.css'))
+		.pipe(cleanCss({compatibility: 'ie8'}))
 		.pipe(gulp.dest(outputDir+'assets/css'))
 });
 
 //sass
-sassSoures=['components/sass/**/*.scss'];
+sassSoures=['components/sass/main.scss'];
 gulp.task('compass',function(){
 	gulp.src(sassSoures)		
 		.pipe(compass({

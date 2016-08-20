@@ -44,23 +44,23 @@ $text_color:$contrast_color;
 @mixin button_size($size:"md"){
 	//if statement
 	@if $size =='xs'{
-		padding: 4px 8px;
+		padding: 2px 8px;
 		font-size:85%px;
 	}
 	@if $size=='sm'{
-		padding: 6px 12px;
+		padding: 3px 12px;
 		font-size:95%;
 	}
 	@if $size=='md'{
-		padding: 10px 20px;
+		padding: 5px 20px;
 		font-size:100%;
 	}
 	@if $size=='lg'{
-		padding: 15px 30px;
+		padding: 10px 30px;
 		font-size:110%;
 	}
 	@if $size=='xlg'{
-		padding: 15px 40px;
+		padding: 12px 40px;
 		font-size:130%;		
 	}
 }

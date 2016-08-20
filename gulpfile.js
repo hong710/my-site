@@ -1,22 +1,43 @@
 
 var gulp 	= require('gulp'),
 	gutil 	= require('gulp-util'),
-	concat 	= require('gulp-concat');
-	compass = require('gulp-compass'),
-	insert	= require('gulp-insert'),
-	cleanCss= require('gulp-clean-css'),
-	gulpIf 	= require('gulp-if'),
-	uglify 	= require('gulp-uglify'),
-	imageMin = require('gulp-imagemin'),	
-	prefix 	= require('gulp-autoprefixer');
+	concat 	= require('gulp-concat'),//concat all file in one place
+	compass = require('gulp-compass'),//compass proccess
+	insert	= require('gulp-insert'),//prepend and append string to file
+	cleanCss= require('gulp-clean-css'),//minify css file
+	gulpIf 	= require('gulp-if'),//if function for gulp
+	uglify 	= require('gulp-uglify'),//minify js
+	imageMin = require('gulp-imagemin'),//compress images	
+	prefix 	= require('gulp-autoprefixer');//add vendor prefix
 
-var outputDir='builds/development/';
+var env = process.env.NODE_ENV || 'development';
+var outputDir,sassStyle ;
+if (env==='development'){
+	outputDir='builds/development/';
+	sassStyle="expanded";
+}else{
+	outputDir='builds/production/';
+	sassStyle="compressed";
+}
 
-//concat js vendor 
+gulp.task('log',function(){
+	gutil.log(env);
+}); 
+	
+//concat, compress js vendor  
 gulp.task('js_vendors', function(){
 	gulp.src('components/vendors/js/*.js')
 		.pipe(concat('vendors.js'))
+		.pipe(uglify())//compress js files
 		.pipe(gulp.dest(outputDir+'assets/js'))
+});
+
+//concat, compress css vendor
+gulp.task('css_vendors', function(){
+	gulp.src('components/vendors/css/*.css')
+		.pipe(concat('vendors.css'))
+		.pipe(cleanCss({compatibility: 'ie8'}))//compress css files
+		.pipe(gulp.dest(outputDir+'assets/css'))
 });	
 
 //concat custom js
@@ -28,30 +49,16 @@ gulp.task('js', function(){
 		.pipe(insert.append('\n});'))
 		.pipe(gulp.dest(outputDir+'assets/js'))
 });
-
-//concat css vendor
-gulp.task('css_vendors', function(){
-	gulp.src('components/vendors/css/*.css')
-		.pipe(concat('vendors.css'))
-		.pipe(cleanCss({compatibility: 'ie8'}))
-		.pipe(gulp.dest(outputDir+'assets/css'))
-});
-
-//sass
+//sass compass
 sassSoures=['components/sass/main.scss'];
 gulp.task('compass',function(){
 	gulp.src(sassSoures)		
 		.pipe(compass({
-			style:'expanded',
-			sass:'components/sass',
-			img:outputDir+'assets/img'
+			style:sassStyle,
+			css: outputDir+'assets/css',//css directory
+			sass:'components/sass'//sass files and folders
 		}))
-		.pipe(prefix({
-            browsers: ['last 2 versions'],
-            cascade: false
-        }))
 		.on('error',gutil.log)
-		.pipe(gulp.dest(outputDir+'assets/css'))
 });
 
 /******************************DEVELOPMENT**********************************************************/
@@ -59,40 +66,51 @@ gulp.task('compass',function(){
 gulp.task('vendors',['js_vendors','css_vendors']);//run multiple tsk with one command
 
 //update sass and custom.js
-gulp.task('default',['compass','js'], function(){
+gulp.task('default',['vendors','compass','js'], function(){
 	gulp.watch(jsSources,['js']);   //run gulp js if jsSource change
 	gulp.watch('components/sass/main.scss',['compass']);//run gulp compass if main.scss change
 });
 /******************************PRODUCTION**********************************************************/
+if (env==='production'){
 
-//clone all files run only one 
-gulp.task('copyfiles', function() {
-    gulp.src('builds/development/**')
+	//those task for copy files
+	gulp.task('font', function() {
+    gulp.src('builds/development/assets/fonts/*')
+    .pipe(gulp.dest('builds/production/assets/fonts/'));
+	});
+	gulp.task('module', function() {
+    gulp.src('builds/development/modules/*')
+    .pipe(gulp.dest('builds/production/modules/'));
+	});
+	gulp.task('partial', function() {
+    gulp.src('builds/development/partials/*')
+    .pipe(gulp.dest('builds/production/partials/'));
+	});
+	gulp.task('php', function() {
+    gulp.src('builds/development/*.php')
     .pipe(gulp.dest('builds/production/'));
-});
+	});
+	gulp.task('copy',['font','module','partial','php']) ;
 
-gulp.task('csscompressed',function(){
-	gulp.src('builds/production/assets/css/*.css')
-		.pipe(cleanCss({compatibility: 'ie8'}))
-		.pipe(gulp.dest('builds/production/assets/css'))
-})
+	//add prefix for production
+	gulp.task('prefix',function(){
+		gulp.src('builds/production/assets/css/*.css')
+			.pipe(prefix({//add prefix
+	            browsers: ['last 3 versions'],
+	            cascade: false
+	        }))
+			.pipe(gulp.dest('builds/production/assets/css'))
+	})
+	//compress image for production
+	gulp.task('imagemin',function(){
+	    gulp.src('builds/development/assets/img/**')
+	        .pipe(imageMin())
+	        .pipe(gulp.dest('builds/production/assets/img'))
+	});
 
-gulp.task('jscompressed',function(){
-	gulp.src('builds/production/assets/js/*.js')
-		.pipe(uglify())
-		.pipe(gulp.dest('builds/production/assets/js'))
-})
-
-
-gulp.task('imagemin',function(){
-    gulp.src('builds/production/assets/img/*')
-        .pipe(imageMin())
-        .pipe(gulp.dest('builds/production/assets/img'))
-});
-
-gulp.task('production',['csscompressed','jscompressed','imagemin']);
-
-
+	//ony in production mode
+	gulp.task('production',['prefix','imagemin','copy']);
+}
 
 
 

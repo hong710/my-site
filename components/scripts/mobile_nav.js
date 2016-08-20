@@ -3,15 +3,12 @@
  **********************************/
  /*logo*/
  if ($(window).width() <=1024) {
-    $('nav >div >a >img').attr('id', 'logo-small');
-    $('.logo').remove();
-
     $('.name').remove();
     $('nav >div >a >span').attr('id', 'name-small');
  }
 $('.js--nav-mobile').click(function(){
     var nav = $('.js--main-nav');
-    nav.slideToggle(200);//.2sec
+    nav.slideToggle('1000');//.2sec
 
     //change the icon to x
     var navIcon = $('.js--nav-icon');

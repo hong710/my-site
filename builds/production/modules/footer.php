@@ -1,13 +1,13 @@
 
 <footer>
-	<a href="#about" class="bt-up hide"><i class="fa fa-arrow-up"></i></a>	
+	<a href="#about" class="bt-up hide"><i class="fa fa-angle-up" aria-hidden="true"></i></a>	
 	<div class="container">
 		<div class="row center ">
 			<div class="col-md-12">
 				<p>Copyright © <?php echo date('Y');?> Developed by Tony Hong. All Rights Reserved.</p>
 			</div>
 			<div class="col-md-12">
-				<p><a href="#about">About Me</a><a href="#portfolio">Portfolio</a><a href="#contact">Email Me</a><a href="http://blog.tonywebdev.com">Blog</a></p>					
+				<p><a href="#about">About Me</a><a href="#portfolio">Portfolio</a><a href="#contact">Email Me</a><a href="#blog">Blog</a></p>					
 			</div>			
 		</div>
 		<div class="container ">

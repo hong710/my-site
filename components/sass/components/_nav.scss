@@ -1,20 +1,28 @@
 //main nav
 nav{
-	padding-top: 30px;
+	background: transparent;
+	padding: 10px;
+	padding-top:60px; 
+	z-index: 9999;
 }
 .main-nav {
+	
+	//the block of emelment
 	li {
 		display: inline-block;
 		float: left;
 		margin-right: 30px;
-		margin-top: 30px;
+		margin-top: 10px;
+		&:last-child{margin-right: 0;}
 	}
+	//main element on the right Home.about...
 	li a{
-		color:$element_color;
+		font-size: 90%;
+		color:$contrast_color;
 	    text-transform: uppercase;	    	 
 		text-decoration: none;   
 		border-bottom: 2px solid transparent;
-		padding: 0 5px 7px 5px;	   
+		padding: 0 5px 7px 5px;	
 		transition: color.3s;
 		&:hover,
 		&:active{
@@ -23,45 +31,24 @@ nav{
 		}	
 	}
 	.active{
-		color:$element_hover;
-		border-bottom: 2px solid $theme_color;
-		padding: 5px;		
+		color:$theme_color;
+		border-bottom: 5px solid $theme_color;
+		padding: 5px;
+		padding-bottom: 20px;		
 	}
 }
+
 //sticky nav
 .sticky-nav{
+
+	@extend .main-nav;
 	padding: 10px;
+	background-color: $second_theme;
 	position: fixed;
 	top:0;
 	left: 0;
 	width: 100%;
-	background: rgb(255,255,255);
-	box-shadow: 1px 1px 1px lighten($box_shadow_color, 40%);
-	z-index: 9999;
-	
-	// #logo{display:inline-block;}
-	// #name{display:inline-block;}
-
-	#logo-small{display:inline-block;}
-	#name-small{display:inline-block;}
-
-	.main-nav{
-		li{margin-top: 10px;}
-		li a{
-			color:$font_color;
-			font-weight: 300;
-			&:hover,
-			&:active{
-				color:$theme_color;
-			}
-		}		
-	}
-	.active{
-		color:$element_hover;
-		border-bottom: 5px solid $theme_color;
-		padding: 5px;
-		padding-bottom: 24px;		
-	}
+	z-index: 9999;	
 }
 //nav for mobile
 .nav-mobile{

@@ -1,0 +1,36 @@
+#blog{
+	background: $second_bg;
+
+	.post{
+		//image
+		.thumbnail{padding: 0;}
+		
+		.caption{position: relative; padding:20px;}
+		//title
+		.title{
+			text-transform: Capitalize;
+			&:hover{
+				color: $theme_color;
+			}
+		}
+
+		//Meta tag
+		small{
+			font-weight: 400;
+			color: $theme_color;
+			a{border-bottom: 1px solid $theme_color;}
+		}
+		//short content
+		p{margin: 15px 0 40px;text-align: justify}
+
+		.caption >a{	
+			position: absolute;
+			border-bottom: 3px solid $theme_color;
+			padding: 0 10px 10px;
+			bottom: 0;
+			right: 15px;				
+		}
+		
+	}//close post	
+	button{margin: 45px 0 65px;}
+}

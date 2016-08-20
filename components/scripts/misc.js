@@ -2,7 +2,7 @@
 *  SCROLLSPY(Materialize)          *               
 ***********************************/
 //using Materialize
-$('.scrollspy').scrollSpy();
+$('.scrollspy').scrollSpy(); 
 
  /*********************************
  *       Parsley Validator       *               
@@ -15,7 +15,6 @@ if ($(window).width() < 767) {
     headerBtn.addClass('bt-md');
     headerBtn.removeClass('bt-xlg');         
 }
-
 /**********************************
  *  NAVIGATION Scroll smoothly    *               
  **********************************/   

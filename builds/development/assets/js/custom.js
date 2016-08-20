@@ -29,7 +29,7 @@ if ($(window).width() >= 1024) {
 *  SCROLLSPY(Materialize)          *               
 ***********************************/
 //using Materialize
-$('.scrollspy').scrollSpy();
+$('.scrollspy').scrollSpy(); 
 
  /*********************************
  *       Parsley Validator       *               
@@ -42,7 +42,16 @@ if ($(window).width() < 767) {
     headerBtn.addClass('bt-md');
     headerBtn.removeClass('bt-xlg');         
 }
-
+/**********************************
+ *        GOOGLE MAP              *               
+ **********************************/
+ function initMap() {
+        var mapDiv = document.getElementById('map');
+        var map = new google.maps.Map(mapDiv, {
+            center: {lat: 44.540, lng: -78.546},
+            zoom: 8
+        });
+      }
 /**********************************
  *  NAVIGATION Scroll smoothly    *               
  **********************************/   
@@ -66,15 +75,12 @@ $(function() {
  **********************************/
  /*logo*/
  if ($(window).width() <=1024) {
-    $('nav >div >a >img').attr('id', 'logo-small');
-    $('.logo').remove();
-
     $('.name').remove();
     $('nav >div >a >span').attr('id', 'name-small');
  }
 $('.js--nav-mobile').click(function(){
     var nav = $('.js--main-nav');
-    nav.slideToggle(200);//.2sec
+    nav.slideToggle('1000');//.2sec
 
     //change the icon to x
     var navIcon = $('.js--nav-icon');
@@ -101,23 +107,17 @@ $('nav').removeClass('sticky-nav');
 $('.js--about').waypoint(function(direction){
     if(direction=="down"){
         $('nav').addClass('sticky-nav');
-        //change logo size    
-        $('nav >div >a >img').attr('id', 'logo-small');
-        $('.logo').remove();
-        $('.name').remove();
         $('nav >div >a >span').attr('id', 'name-small');
     } else{
         $('nav').removeClass('sticky-nav');
         //change logo size back to orginal
         if($(window).width() >1024){   
             $('nav >div >a >img').attr('id', 'logo');
-            $('.logo-small').remove();
-            $('.name-small').remove();
             $('nav >div >a >span').attr('id', 'name');
         }
     }
 },{
-   offset:'100px;' 
+   offset:'120px;' 
 });
 
 /***********************************

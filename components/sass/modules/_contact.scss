@@ -1,38 +1,53 @@
 #contact{
-	padding-bottom: 40px;
+	
 	input[type=text],
-	input[type=email],
-	input[type=tel]{
+	input[type=email]{
 		border-radius: 5px;
-		padding:10px;
+		padding:5px;
 	}
 	textarea{
-		min-height: 200px;
+		min-height: 150px;
 		margin-top: -10px;
 	}	
 	
-	.main-form{
-		background: $contrast_color;
-		box-shadow: 0px 2px 5px $box_shadow_color;
-		padding:20px;
-		padding-top: 40px;
-		margin-bottom: 20px;
+	.contact-section{//wrap whole contact form
+		box-shadow: 0px 0px 38px 0px rgba(0, 0, 0, 0.1);
+		//margin-top: -40px;
+		z-index: 7000;
+		h3{//header of contact form (left & right)
+			margin-bottom: 20px;
+			text-transform: Uppercase;
+			margin-top: 40px;
 
+		}
+	}
+	.info{//left column
+		div > p{
+			margin-bottom: 20px;
+		}
+	}
+
+	.main-form{//right column
+		//space padding bottom for every input
 		>div div{			
 			input{margin-bottom: 20px;}
 		}
-		button{margin-top: 20px;}
+		button{margin-top: 20px;margin-bottom: 40px;}
 	}
 	
-	.message{
+	.message{//message format
 		border: 1px solid transparent;
 		padding: 10px;
 		margin-bottom: 20px;
 		margin-top: -20px;
 		display: none;
 	}
-
 	.success{background: $success_color;display: block;}
 	.error{background: $error_color;display: block;}
+
+	#map{
+		height: 100%;
+		height: 500px;
+	}
 	
 } 

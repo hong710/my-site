@@ -31,17 +31,17 @@
 		//border:1px solid black;		
 		text-align: center;
 		img{
-			width: 70%;
+			width: 80%;
 			position: relative;
 		}
 		h2{
 			font-family: $main_font;
 			position: absolute;
-			top:110px;
-			left: 300px;
-			font-size: 110%;
+			top:120px;
+			left: 260px;
+			font-size: 90%;
 			.month{color: #E83E3E;display: block;margin-bottom: 10px;}
-			.day{font-size: 130%;color:#16a085 ;}
+			.day{color:#16a085 ;}
 			
 		}
 	}

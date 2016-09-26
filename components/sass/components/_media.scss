@@ -2,13 +2,12 @@
 
 //screen 1024px-1200px
 @media only screen and (max-width: 1200px){
-   	body{font-size: 16px;}
 	.sticky-nav .main-nav .active{padding-bottom: 25px;}
 	#about{
 		>div >div:last-child div {
 			.date{
-				top:90px;
-				left: 220px;
+				top:100px;
+				left: 215px;
 				font-size: 90%;
 			}
 		}
@@ -16,10 +15,9 @@
 }
 //screen 768 - 1023
 @media only screen and (max-width: 1023px){
-	body{font-size: 15px;}
 	header{
 		background-attachment: scroll !important;
-		.intro-text-box{h1{font-size: 310%;letter-spacing: 3px;}}
+		.intro-text-box{h1{font-size: 400%;letter-spacing: 3px;}}
 	}
 	.main-nav li{margin-top: 15px;}
 	.sticky-nav .main-nav .active{padding-bottom: 28px;}
@@ -34,8 +32,8 @@
 		.intro-text-box{
 			width: 500px;
 			top:60%;
-			h1{font-size: 240%;letter-spacing: 2px;}
-			h2{font-size:100%;}
+			h1{font-size: 380%;letter-spacing: 2px;}
+			h2{font-size:150%;}
 		}
 	}
 	.nav-mobile{display: inline-block;}
@@ -64,8 +62,8 @@
 		.intro-text-box{
 			width: 400px;
 			top:55%;
-			h1{font-size: 160%;letter-spacing: 2px;}
-			h2{font-size:90%;}
+			h1{font-size: 280%;letter-spacing: 2px;}
+			h2{font-size:120%;}
 		}
 	}	
 

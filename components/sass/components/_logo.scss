@@ -15,7 +15,7 @@
 
 #name-small{
 	@extend #name;
-	font-size: 100%;
+	font-size: 110%;
 }
 .ft-logo{
 	height: 50px;
@@ -29,6 +29,7 @@ $facebook:#3b5998;
 $github:#171515;
 $twitter: #55acee;
 $whatsapp:#25D366;
+$envelope:#25D366;
 .fa-linkedin,
 .fa-facebook,
 .fa-github,
@@ -37,7 +38,8 @@ $whatsapp:#25D366;
 .fa-cube,
 .fa-mobile,
 .fa-code,
-.fa-search{
+.fa-database,
+.fa-envelope-o{
 	width: 32px;
     height: 32px;
     text-align: center;
@@ -57,12 +59,12 @@ $whatsapp:#25D366;
 .fa-facebook{background :$facebook; }
 .fa-github{background :$github; }
 .fa-twitter{background :$twitter; }
-.fa-whatsapp{background :$whatsapp; }
+.fa-envelope-o{background :$envelope; }
 
 .fa-cube,
 .fa-mobile,
 .fa-code,
-.fa-search{
+.fa-database{
 	background:$panel_bg; 
 	font-size: 130%;
 	width: 50px;

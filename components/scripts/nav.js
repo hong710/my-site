@@ -7,7 +7,7 @@
 $('nav').removeClass('sticky-nav');
 $('.js--about').waypoint(function(direction){
     if(direction=="down"){
-        $('nav').addClass('sticky-nav');
+        $('nav').addClass('sticky-nav').delay(4000);
         $('nav >div >a >span').attr('id', 'name-small');
     } else{
         $('nav').removeClass('sticky-nav');

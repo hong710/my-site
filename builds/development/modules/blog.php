@@ -1,53 +1,40 @@
+<?php
+	$linkResponse = "http://localhost:8000/";
+	$sql= "SELECT * from posts ORDER BY id DESC LIMIT 3";
+	$posts = $db->select($sql);
+?>
 <section id="blog" class="section scrollspy">
 	<div class="container">
 		<div class="page-heading"><h1>Blog <span>Post</span></h1></div>
-	
+
 		<div class="row">
-			<div class="col-md-4 post">
-				<div class="thumbnail">
-					<img class="img-responsive" src="assets/img/blog/1.png">
-					<div class="caption">
-						<h3 class="title">This the a First Title</h3>
-						<small><strong>Aug 2016 by <a href="">Tony Hong</a></strong></small>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris felis orci, venenatis id lobortis ornare, vehicula ornare tortor. Sed suscipit ut enim id commodo. Quisque non dictum neq</p>
-						<a class="bt-" href=""><strong>Read More</strong></a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-4 post">
-				<div class="thumbnail">
-					<img class="img-responsive" src="assets/img/blog/2.png">
-					<div class="caption">
-						<h3 class="title">This the a First Title</h3>
-						<small><strong>Aug 2016 by <a href="">Tony Hong</a></strong></small>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris felis orci, venenatis id lobortis ornare, vehicula ornare tortor. Sed suscipit ut enim id commodo. Quisque non dictum neq</p>
-						<a class="bt-" href=""><strong>Read More</strong></a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-4 post">
-				<div class="thumbnail">
-					<img class="img-responsive" src="assets/img/blog/3.png">
-					<div class="caption">
-						<h3 class="title">This the a First Title</h3>
-						<small><strong>Aug 2016 by <a href="">Tony Hong</a></strong></small>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris felis orci, venenatis id lobortis ornare, vehicula ornare tortor. Sed suscipit ut enim id commodo. Quisque non dictum neq</p>
-						<a class="bt-" href=""><strong>Read More</strong></a>
-					</div>
-				</div>
-			</div>
-		</div>
-
+			<?php while ( $post = $db->fetch_array($posts)) { ?>
+			<div class="col-sm-6 col-md-4 clearfix">
+                <div class="panel">
+                    <div class="panel-heading" style="background-image:url('<?php echo $linkResponse.$post['image']?>')">
+                        <div class="panel-title">
+                            <h1><i class="fa fa-<?php echo $post['logo']; ?>"></i></h1>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="meta clearfix">
+                            <li><i class="fa fa-user"></i><strong>Tony Hong</strong></li>
+                            <li><i class="fa fa-clock-o"></i><?php echo formatDate($post['created_at']);?></li>
+                        </ul>
+                        <h3 class="title"><?php echo ($post['title']);?></a></h3>
+                        <article class="content">
+                            <p><?php echo shortenText($post['body'],150) ?></p>
+                        </article>
+                    </div>
+                    <a class='read-more' href="<?php echo $linkResponse.'blog/'.$post['slug']?>"><strong>Read more</strong></a>
+                </div>
+            </div>
+			<?php } ?>
 		<div class="row">
 			<div class="col-sm-12 center">
-				<button class="bt-primary bt-md ">Load More</button>
+				<a class="bt-primary bt-md load" href="<?php echo $linkResponse;?>">Load More</a>
 			</div>
-		</div>		
+		</div>
 	</div>
-	
-
-
-	
 </section>
+<!-- <img class="img-responsive" src="<?php echo $linkResponse.$post['image']?>"> -->

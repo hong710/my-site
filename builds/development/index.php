@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<?php require_once('../includes/configs/config.php') ?>
+    <?php require_once('../includes/database.php') ?>
+    <?php require_once('../includes/functions.php') ?>
     <?php require_once ('modules/head.php');?>
 </head>
 <body>

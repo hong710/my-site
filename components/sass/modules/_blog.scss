@@ -1,36 +1,100 @@
 #blog{
 	background: $second_bg;
 
-	.post{
-		//image
-		.thumbnail{padding: 0;}
-		
-		.caption{position: relative; padding:20px;}
-		//title
-		.title{
-			text-transform: Capitalize;
-			&:hover{
-				color: $theme_color;
-			}
-		}
+	.panel{
+		border: none;
+		position: relative;
+		min-height: 520px;//height of the single post list
+		margin-bottom: 50px;//space bottom
+		//border-color: $border_color;
+		box-shadow: -5px 5px 15px $box_shadow_color;
+	}
 
-		//Meta tag
-		small{
-			font-weight: 400;
-			color: $theme_color;
-			a{border-bottom: 1px solid $theme_color;}
-		}
-		//short content
-		p{margin: 15px 0 40px;text-align: justify}
-
-		.caption >a{	
+	.panel-heading{//image background
+		border-radius: 4px;//intial panel radius
+		position: relative;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 50%;
+		min-height: 200px;
+		padding: 0;
+		border-bottom: none;		
+		h1{//symbol of the post
+			font-size: 300%;
 			position: absolute;
-			border-bottom: 3px solid $theme_color;
-			padding: 0 10px 10px;
-			bottom: 0;
-			right: 15px;				
+			top: 30%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			i{color: lighten($theme_color,90%); } 
 		}
-		
-	}//close post	
-	button{margin: 45px 0 65px;}
+		.fa-code,.fa-cube{
+			background: none;
+			font-size:inherit; 
+		}		
+		//color coat the image	
+		.panel-title{//div to wrap h3 tag title
+			background-color: rgba($second_theme,.5);
+			border-top-left-radius: 4px;//intial panel radius
+			border-top-right-radius: 4px;//intial panel radius				
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;}		
+	}//close panel-heading
+
+	.meta {//meta tag
+		margin-bottom: 10px;		
+		li{
+			display: inline-block;
+			font-size: 85%;
+			margin-right: 15px;
+			i{margin-right: 7px;color: $theme_color;}
+			&:last-child{margin-right: 0;} }
+
+	}
+	.read-more{	
+		position: absolute;
+		border-bottom: 3px solid $theme_color;
+		padding: 0 10px 10px;
+		bottom: 0;
+		right: 15px;				
+		} 
+	.load{margin: 45px 0 65px;}
 }
+
+//
+
+	// .post{
+	// 	//image cover
+	// 	.post-heading{
+	// 		border-radius: 4px;//intial panel radius
+	// 		position: relative;
+	// 		background-repeat: no-repeat;
+	// 		background-size: cover;
+	// 		background-position: 50%;
+	// 		min-height: 140px;
+	// 		padding: 0;
+	// 		border-bottom: none;
+	// 	}
+
+	// 	.caption{position: relative; padding:20px;}
+	// 	//title
+	// 	.title{
+	// 		text-transform: Capitalize;
+	// 		&:hover{
+	// 			color: $theme_color;
+	// 		}
+	// 	}
+
+	// 	//Meta tag
+	// 	small{
+	// 		font-weight: 400;
+	// 		color: $theme_color;
+	// 		a{border-bottom: 1px solid $theme_color;}
+	// 	}
+	// 	//short content
+	// 	p{margin: 15px 0 40px;text-align: justify}
+
+	// 	.
+		
+	

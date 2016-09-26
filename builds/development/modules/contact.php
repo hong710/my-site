@@ -9,15 +9,13 @@
 					<h3>Contact Information</h3>
 					<div>
 						<p><i class="fa fa-phone"></i>(925)-718-6694</p>
-						<p><i class="fa fa-envelope-o"></i>tony.hongq@gmail.com</p>
+						<p><i class="fa fa-envelope"></i>tony.hongq@gmail.com</p>
 						<p><i class="fa fa-map-marker"></i>Irvine, Southern California, US</p>
 						<div class="social-link">
 							<h4><i class="fa fa-link" aria-hidden="true"></i>Social Links</h4>
-							<a href=""><i class="fa fa-linkedin"></i></a>
-							<a href=""><i class="fa fa-facebook"></i></a>
-							<a href=""><i class="fa fa-github"></i></a>
-							<a href=""><i class="fa fa-twitter"></i></a>
-							<a href=""><i class="fa fa-whatsapp"></i></a>
+							<a href="https://github.com/hong710"><i class="fa fa-github"></i></a>
+							<a href="https://twitter.com/TonyHong710"><i class="fa fa-twitter"></i></a>
+							<a href="mailto:'tony.hongq@gmail.com"><i class="fa fa-envelope-o"></i></a>
 						</div>
 					</div>
 				</div>
@@ -51,8 +49,7 @@
 							<div class="col-xs-12">
 							<button class="bt-primary bt-md">Send Message</button>			
 							</div>			
-						</div>
-						
+						</div>						
 					</form>
 				</div>					
 			</div>

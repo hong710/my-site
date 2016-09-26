@@ -7,9 +7,6 @@
     $('nav >div >a >span').attr('id', 'name-small');
  }
 $('.js--nav-mobile').click(function(){
-    var nav = $('.js--main-nav');
-    nav.slideToggle('1000');//.2sec
-
     //change the icon to x
     var navIcon = $('.js--nav-icon');
     if(navIcon.hasClass('fa-bars')){
@@ -21,7 +18,9 @@ $('.js--nav-mobile').click(function(){
     } else{
         navIcon.removeClass('fa-times');
         navIcon.addClass('fa-bars');
-        $('nav >div >a >img').show('1000');
-        $('nav >div >a >span').show('1000');
+        $('nav >div >a >img').show('2000');
+        $('nav >div >a >span').show('2000');
     }
+    var nav = $('.js--main-nav');
+    nav.slideToggle('3000');//.2sec
 });

@@ -6,7 +6,7 @@ if ($(window).width() >= 1024) {
     //Welcome to Tony's Home
     $('.js--header-1').addClass('animated zoomIn');
     $('.js--header-2').addClass('animated zoomIn');
-    $('.js--header-3').addClass('animated zoomIn');
+    $('.js--header-3').addClass('animated bounce');
     
     //about mainskill header
     $('.js--about-1').waypoint(function(direction){
@@ -18,11 +18,6 @@ if ($(window).width() >= 1024) {
     //contact: form slide
     $('.js--contact-1' ).waypoint(function(direction){
         $('.js--contact-1').addClass('animated bounce');
-    },{offset:'50%'})
-
-    //contact: sidebar 
-    $('.js--contact-2' ).waypoint(function(direction){
-        $('.js--contact-2').addClass('animated bounce');
     },{offset:'50%'})
 }
 /***********************************
@@ -42,16 +37,6 @@ if ($(window).width() < 767) {
     headerBtn.addClass('bt-md');
     headerBtn.removeClass('bt-xlg');         
 }
-/**********************************
- *        GOOGLE MAP              *               
- **********************************/
- function initMap() {
-        var mapDiv = document.getElementById('map');
-        var map = new google.maps.Map(mapDiv, {
-            center: {lat: 44.540, lng: -78.546},
-            zoom: 8
-        });
-      }
 /**********************************
  *  NAVIGATION Scroll smoothly    *               
  **********************************/   
@@ -79,9 +64,6 @@ $(function() {
     $('nav >div >a >span').attr('id', 'name-small');
  }
 $('.js--nav-mobile').click(function(){
-    var nav = $('.js--main-nav');
-    nav.slideToggle('1000');//.2sec
-
     //change the icon to x
     var navIcon = $('.js--nav-icon');
     if(navIcon.hasClass('fa-bars')){
@@ -93,9 +75,11 @@ $('.js--nav-mobile').click(function(){
     } else{
         navIcon.removeClass('fa-times');
         navIcon.addClass('fa-bars');
-        $('nav >div >a >img').show('1000');
-        $('nav >div >a >span').show('1000');
+        $('nav >div >a >img').show('2000');
+        $('nav >div >a >span').show('2000');
     }
+    var nav = $('.js--main-nav');
+    nav.slideToggle('3000');//.2sec
 });
 
 /***********************************
@@ -106,7 +90,7 @@ $('.js--nav-mobile').click(function(){
 $('nav').removeClass('sticky-nav');
 $('.js--about').waypoint(function(direction){
     if(direction=="down"){
-        $('nav').addClass('sticky-nav');
+        $('nav').addClass('sticky-nav').delay(4000);
         $('nav >div >a >span').attr('id', 'name-small');
     } else{
         $('nav').removeClass('sticky-nav');
